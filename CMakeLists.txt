@@ -4,9 +4,10 @@
 
 cmake_minimum_required(VERSION 3.25.1)
 
-project(AVKON DESCRIPTION "The AVKON SDK by Ne.app (amlal@ne-app.eu)" HOMEPAGE_URL "ne-app.eu")
+project(AVKON DESCRIPTION "The AVKON SDK by Ne.app. (amlal@ne-app.eu)" HOMEPAGE_URL "ne-app.eu")
 
 set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED 23)
 
 find_package(Boost REQUIRED)
 find_package(TBB REQUIRED)
@@ -14,6 +15,7 @@ find_package(GTK REQUIRED)
 
 if (NOT DEFINED CMAKE_HOST_WIN32)
   find_package(PkgConfig REQUIRED)
+
   pkg_check_modules(JSC REQUIRED javascriptcoregtk-4.1)
   pkg_check_modules(GTK REQUIRED gtk4)
   pkg_check_modules(WGTK REQUIRED webkit2gtk-4.1)
